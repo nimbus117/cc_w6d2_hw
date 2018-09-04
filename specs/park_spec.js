@@ -62,6 +62,11 @@ describe('Park', function() {
     assert.deepStrictEqual(actual.length, 2);
   });
 
-  it('should be able to remove all dinosaurs of a particular species');
-
+  it('should be able to remove all dinosaurs of a particular species', function () {
+    park.addDinosaur(dinosaur3);
+    park.addDinosaur(dinosaur4);
+    park.removeBySpecies('triceratops');
+    const actual = park.dinosaurs.length;
+    assert.strictEqual(actual.length, 2);
+  });
 });
