@@ -31,6 +31,16 @@ Park.prototype.findPopularDinosaur = function() {
 
   this.dinosaurs.sort((a,b) => a.guestsAttractedPerDay - b.guestsAttractedPerDay);
   return this.dinosaurs[this.dinosaurs.length - 1];
-}
+};
+
+Park.prototype.findBySpecies = function(species) {
+  let foundDinosaurs = [];
+  for (dinosaur of this.dinosaurs) {
+    if (dinosaur.species === species) {
+      foundDinosaurs.push(dinosaur);
+    }
+  }
+  return foundDinosaurs;
+};
 
 module.exports = Park;
