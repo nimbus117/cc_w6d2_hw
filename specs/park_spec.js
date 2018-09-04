@@ -6,24 +6,33 @@ describe('Park', function() {
 
   let park;
   let parkName;
-  let parkTicketPrice
+  let parkTicketPrice;
+  let dinosaur3;
+  let parkDinosaurs;
   beforeEach(function () {
+    dinosaur1 = new Dinosaur('t-rex', 'carnivore', 50);
+    dinosaur2 = new Dinosaur('stegosaurus', 'herbivore', 40);
+    dinosaur3 = new Dinosaur('triceratops', 'herbivore', 35);
+    parkDinosaurs = [dinosaur1, dinosaur2]
     name = 'Jurassic Park';
     parkTicketPrice = 10;
-    park = new Park(parkName, parkTicketPrice);
+    park = new Park(parkName, parkTicketPrice, parkDinosaurs);
   })
 
   it('should have a name', function () {
-    const actual = park.name
-    assert.strictEqual(actual, parkName)
+    const actual = park.name;
+    assert.strictEqual(actual, parkName);
   });
 
   it('should have a ticket price', function () {
-    const actual = park.ticketPrice
-    assert.strictEqual(actual, parkTicketPrice)
+    const actual = park.ticketPrice;
+    assert.strictEqual(actual, parkTicketPrice);
   });
 
-  it('should have a collection of dinosaurs');
+  it('should have a collection of dinosaurs', function () {
+    const actual = park.dinosaurs
+    assert.deepStrictEqual(actual, parkDinosaurs)
+  });
 
   it('should be able to add a dinosaur to its collection');
 
