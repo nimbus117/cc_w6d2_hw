@@ -56,6 +56,8 @@ describe('Park', function() {
   });
 
   it('should be able to find all dinosaurs of a particular species', function () {
+    park.addDinosaur(dinosaur3);
+    park.addDinosaur(dinosaur4);
     const actual = park.findBySpecies('triceratops');
     assert.deepStrictEqual(actual.length, 2);
   });
