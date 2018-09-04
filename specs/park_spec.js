@@ -10,11 +10,13 @@ describe('Park', function() {
   let dinosaur1;
   let dinosaur2;
   let dinosaur3;
+  let dinosaur4;
   let parkDinosaurs;
   beforeEach(function () {
     dinosaur1 = new Dinosaur('t-rex', 'carnivore', 50);
     dinosaur2 = new Dinosaur('stegosaurus', 'herbivore', 40);
     dinosaur3 = new Dinosaur('triceratops', 'herbivore', 35);
+    dinosaur4 = new Dinosaur('triceratops', 'herbivore', 36);
     parkDinosaurs = [dinosaur1, dinosaur2]
     name = 'Jurassic Park';
     parkTicketPrice = 10;
@@ -53,7 +55,10 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, dinosaur1);
   });
 
-  it('should be able to find all dinosaurs of a particular species');
+  it('should be able to find all dinosaurs of a particular species', function () {
+    const actual = park.findBySpecies('triceratops');
+    assert.deepStrictEqual(actual.length, 2);
+  });
 
   it('should be able to remove all dinosaurs of a particular species');
 
