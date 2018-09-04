@@ -7,6 +7,8 @@ describe('Park', function() {
   let park;
   let parkName;
   let parkTicketPrice;
+  let dinosaur1;
+  let dinosaur2;
   let dinosaur3;
   let parkDinosaurs;
   beforeEach(function () {
@@ -35,12 +37,16 @@ describe('Park', function() {
   });
 
   it('should be able to add a dinosaur to its collection', function () {
-    park.addDinosaur(dinosaur3)
+    park.addDinosaur(dinosaur3);
     const actual = park.dinosaurs.length;
     assert.strictEqual(actual, 3);
   });
 
-  it('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function () {
+    park.removeDinosaur(dinosaur2);
+    const actual = park.dinosaurs[0];
+    assert.deepStrictEqual(actual, dinosaur1)
+  });
 
   it('should be able to find the dinosaur that attracts the most visitors');
 
