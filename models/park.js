@@ -1,5 +1,6 @@
-function Park(name) {
+function Park(name, ticketPrice) {
   this.name = name;
+  this.ticketPrice = ticketPrice;
 }
 
 
