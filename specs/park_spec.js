@@ -67,6 +67,6 @@ describe('Park', function() {
     park.addDinosaur(dinosaur4);
     park.removeBySpecies('triceratops');
     const actual = park.dinosaurs.length;
-    assert.strictEqual(actual.length, 2);
+    assert.strictEqual(actual, 2);
   });
 });
